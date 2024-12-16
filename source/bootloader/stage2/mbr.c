@@ -20,7 +20,6 @@ typedef struct {
 
     // 0x0C	4	Number of sectors in partition
     uint32_t size;
-
 } __attribute__((packed)) MBR_Entry;
 
 
