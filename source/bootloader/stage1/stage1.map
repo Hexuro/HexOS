@@ -19,24 +19,24 @@ Linker script and memory map
  *(.fsheaders)
  .fsheaders     0x00007c03       0x3b source/bootloader/stage1/boot.o
 
-.entry          0x00007c3e       0x76
+.entry          0x00007c3e       0x89
                 0x00007c3e                        __entry_start = .
  *(.entry)
- .entry         0x00007c3e       0x76 source/bootloader/stage1/boot.o
+ .entry         0x00007c3e       0x89 source/bootloader/stage1/boot.o
                 0x00007c3e                start
 
-.text           0x00007cc0       0xa7
+.text           0x00007cd0       0xa7
  *(.text)
- .text          0x00007cc0       0xa7 source/bootloader/stage1/boot.o
+ .text          0x00007cd0       0xa7 source/bootloader/stage1/boot.o
 
-.data           0x00007d68       0x2f
+.data           0x00007d78       0x2f
  *(.data)
- .data          0x00007d68       0x2f source/bootloader/stage1/boot.o
-                0x00007d79                stage2_location
+ .data          0x00007d78       0x2f source/bootloader/stage1/boot.o
+                0x00007d89                stage2_location
 
-.rodata         0x00007d98       0x4e
+.rodata         0x00007da8       0x4e
  *(.rodata)
- .rodata        0x00007d98       0x4e source/bootloader/stage1/boot.o
+ .rodata        0x00007da8       0x4e source/bootloader/stage1/boot.o
 
 .bios_footer    0x00007dfe        0x2
                 0x00007dfe        0x2 SHORT 0xaa55

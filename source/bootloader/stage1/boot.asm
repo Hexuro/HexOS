@@ -44,6 +44,15 @@ section .entry
     global start
 
     start:
+        ; move partition entry from MBR to a different location so we 
+        ; don't overwrite it (which is passed through DS:SI)
+        mov ax, PARTITION_ENTRY_SEGMENT
+        mov es, ax
+        mov di, PARTITION_ENTRY_OFFSET
+        mov cx, 16
+        rep movsb
+
+
         ; setup data segments
         mov ax, 0           ; can't set ds/es directly
         mov ds, ax
@@ -64,6 +73,9 @@ section .entry
         ; read something from floppy disk
         ; BIOS should set DL to drive number
         mov [ebr_drive_number], dl
+
+        mov si, PARTITION_ENTRY_OFFSET
+        mov di, PARTITION_ENTRY_SEGMENT
 
         ; show loading message
         mov si, msg_loading
@@ -308,12 +320,14 @@ section .text
         popa
         ret
 
+
 section .rodata
 
     msg_loading:            db 'Loading...', ENDL, 0
     msg_read_failed:        db 'Read from disk failed!', ENDL, 0
     msg_stage2_not_found:   db 'STAGE2.BIN file not found!', ENDL, 0
     file_stage2_bin:        db 'STAGE2  BIN'
+
 
 section .data
 
@@ -329,9 +343,14 @@ section .data
     STAGE2_LOAD_SEGMENT     equ 0x0
     STAGE2_LOAD_OFFSET      equ 0x500
 
+    PARTITION_ENTRY_SEGMENT equ 0x2000
+    PARTITION_ENTRY_OFFSET  equ 0x0
+
+
 section .data
     global stage2_location
     stage2_location:        times 30 db 0
+
 
 section .bss
     buffer:                 resb 512
