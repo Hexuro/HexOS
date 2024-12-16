@@ -1,0 +1,368 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+                              source/bootloader/stage2/stdio.o (__udivdi3)
+/home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                              source/bootloader/stage2/stdio.o (__umoddi3)
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000500                        phys = 0x500
+                0x00000500                        . = phys
+
+.entry          0x00000500       0xe3
+                0x00000500                        __entry_start = .
+ *(.entry)
+ .entry         0x00000500       0xe3 source/bootloader/stage2/entry.o
+                0x00000500                entry
+
+.text           0x000005f0     0x1e4e
+                0x000005f0                        __text_start = .
+ *(.text)
+ .text          0x000005f0      0x135 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .text          0x00000725       0x55 source/bootloader/stage2/ctype.o
+                0x00000725                islower
+                0x0000074e                toupper
+ .text          0x0000077a      0x1f2 source/bootloader/stage2/disk.o
+                0x0000077a                DISK_Initialize
+                0x000007ea                DISK_LBA2CHS
+                0x00000877                DISK_ReadSectors
+ .text          0x0000096c      0xa70 source/bootloader/stage2/fat.o
+                0x0000096c                FAT_ReadBootSector
+                0x00000989                FAT_ReadFat
+                0x000009bd                FAT_Detect
+                0x000009c3                FAT_Initialize
+                0x00000c31                FAT_ClusterToLba
+                0x00000c52                FAT_OpenEntry
+                0x00000e1a                FAT_NextCluster
+                0x00000e67                FAT_Read
+                0x000010bb                FAT_ReadEntry
+                0x000010dc                FAT_Close
+                0x0000112a                FAT_FindFile
+                0x0000128f                FAT_Open
+ .text          0x000013dc      0x11b source/bootloader/stage2/main.o
+                0x000013dc                start
+ .text          0x000014f7       0xa2 source/bootloader/stage2/mbr.o
+                0x000014f7                MBR_DetectPartition
+                0x00001569                Partition_ReadSectors
+ .text          0x00001599      0x11e source/bootloader/stage2/memory.o
+                0x00001599                memcpy
+                0x000015eb                memset
+                0x0000162e                memcmp
+                0x0000168e                segoffset_to_linear
+ .text          0x000016b7      0x883 source/bootloader/stage2/stdio.o
+                0x000016b7                putchr
+                0x000016e6                putcolor
+                0x00001718                getchr
+                0x0000173a                getcolor
+                0x0000175f                setcursor
+                0x000017d0                clrscr
+                0x0000185e                scrollback
+                0x0000194c                putc
+                0x00001a5c                puts
+                0x00001a8b                printf_unsigned
+                0x00001b2f                printf_signed
+                0x00001b8c                printf
+                0x00001ea1                print_buffer
+ .text          0x00001f3a       0xb6 source/bootloader/stage2/string.o
+                0x00001f3a                strchr
+                0x00001f78                strcpy
+                0x00001fca                strlen
+ .text          0x00001ff0      0x1a5 source/bootloader/stage2/x86.o
+                0x00001ff0                x86_outb
+                0x00001ffb                x86_inb
+                0x00002004                x86_Disk_GetDriveParams
+                0x000020c7                x86_Disk_Reset
+                0x00002117                x86_Disk_Read
+ *fill*         0x00002195        0xb 
+ .text          0x000021a0       0x39 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ *fill*         0x000021d9        0x7 
+ .text          0x000021e0      0x11a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+                0x000021e0                __udivdi3
+ *fill*         0x000022fa        0x6 
+ .text          0x00002300      0x13e /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                0x00002300                __umoddi3
+
+.init           0x0000243e        0xf
+ .init          0x0000243e        0x3 source/bootloader/stage2/crti.o
+                0x0000243e                _init
+ .init          0x00002441        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .init          0x00002446        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .init          0x0000244b        0x2 source/bootloader/stage2/crtn.o
+
+.fini           0x0000244d        0xa
+ .fini          0x0000244d        0x3 source/bootloader/stage2/crti.o
+                0x0000244d                _fini
+ .fini          0x00002450        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .fini          0x00002455        0x2 source/bootloader/stage2/crtn.o
+
+.data           0x00002458       0x10
+                0x00002458                        __data_start = .
+ *(.data)
+ .data          0x00002458        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+                0x00002458                __dso_handle
+ .data          0x0000245c        0x0 source/bootloader/stage2/ctype.o
+ .data          0x0000245c        0x0 source/bootloader/stage2/disk.o
+ .data          0x0000245c        0x0 source/bootloader/stage2/fat.o
+ .data          0x0000245c        0x8 source/bootloader/stage2/main.o
+                0x0000245c                KernelLoadBuffer
+                0x00002460                Kernel
+ .data          0x00002464        0x0 source/bootloader/stage2/mbr.o
+ .data          0x00002464        0x0 source/bootloader/stage2/memory.o
+ .data          0x00002464        0x4 source/bootloader/stage2/stdio.o
+                0x00002464                g_ScreenBuffer
+ .data          0x00002468        0x0 source/bootloader/stage2/string.o
+ .data          0x00002468        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .data          0x00002468        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .data          0x00002468        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.ctors          0x00002468        0x8
+ .ctors         0x00002468        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .ctors         0x0000246c        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+
+.dtors          0x00002470        0x8
+ .dtors         0x00002470        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .dtors         0x00002474        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+                0x00002474                __DTOR_END__
+
+.tm_clone_table
+                0x00002478        0x0
+ .tm_clone_table
+                0x00002478        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .tm_clone_table
+                0x00002478        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+
+.rodata         0x00002478      0x2aa
+                0x00002478                        __rodata_start = .
+ *(.rodata)
+ .rodata        0x00002478       0x63 source/bootloader/stage2/disk.o
+ *fill*         0x000024db        0x1 
+ .rodata        0x000024dc      0x14b source/bootloader/stage2/fat.o
+ .rodata        0x00002627       0x3e source/bootloader/stage2/main.o
+ *fill*         0x00002665        0x3 
+ .rodata        0x00002668       0xba source/bootloader/stage2/stdio.o
+                0x00002668                SCREEN_WIDTH
+                0x0000266c                SCREEN_HEIGHT
+                0x00002670                DEFAULT_COLOR
+                0x00002674                g_HexChars
+
+.eh_frame       0x00002724       0xdc
+ .eh_frame      0x00002724        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .eh_frame      0x00002724        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .eh_frame      0x00002728       0x64 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x0000278c       0x74 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.bss            0x00002800       0x38
+                0x00002800                        __bss_start = .
+ *(.bss)
+ .bss           0x00002800       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .bss           0x00002820        0x0 source/bootloader/stage2/ctype.o
+ .bss           0x00002820        0x0 source/bootloader/stage2/disk.o
+ .bss           0x00002820        0xd source/bootloader/stage2/fat.o
+ .bss           0x0000282d        0x0 source/bootloader/stage2/main.o
+ .bss           0x0000282d        0x0 source/bootloader/stage2/mbr.o
+ .bss           0x0000282d        0x0 source/bootloader/stage2/memory.o
+ *fill*         0x0000282d        0x3 
+ .bss           0x00002830        0x8 source/bootloader/stage2/stdio.o
+                0x00002830                g_ScreenX
+                0x00002834                g_ScreenY
+ .bss           0x00002838        0x0 source/bootloader/stage2/string.o
+ .bss           0x00002838        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .bss           0x00002838        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .bss           0x00002838        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                0x00002838                        __end = .
+LOAD source/bootloader/stage2/crti.o
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+LOAD source/bootloader/stage2/ctype.o
+LOAD source/bootloader/stage2/disk.o
+LOAD source/bootloader/stage2/fat.o
+LOAD source/bootloader/stage2/main.o
+LOAD source/bootloader/stage2/mbr.o
+LOAD source/bootloader/stage2/memory.o
+LOAD source/bootloader/stage2/stdio.o
+LOAD source/bootloader/stage2/string.o
+LOAD source/bootloader/stage2/entry.o
+LOAD source/bootloader/stage2/x86.o
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+LOAD source/bootloader/stage2/crtn.o
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a
+OUTPUT(source/bootloader/stage2/stage2.bin binary)
+
+.debug_aranges  0x00000000      0x160
+ .debug_aranges
+                0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_aranges
+                0x00000000       0x20 source/bootloader/stage2/ctype.o
+ .debug_aranges
+                0x00000020       0x20 source/bootloader/stage2/disk.o
+ .debug_aranges
+                0x00000040       0x20 source/bootloader/stage2/fat.o
+ .debug_aranges
+                0x00000060       0x20 source/bootloader/stage2/main.o
+ .debug_aranges
+                0x00000080       0x20 source/bootloader/stage2/mbr.o
+ .debug_aranges
+                0x000000a0       0x20 source/bootloader/stage2/memory.o
+ .debug_aranges
+                0x000000c0       0x20 source/bootloader/stage2/stdio.o
+ .debug_aranges
+                0x000000e0       0x20 source/bootloader/stage2/string.o
+ .debug_aranges
+                0x00000100        0x0 source/bootloader/stage2/entry.o
+ .debug_aranges
+                0x00000100       0x20 source/bootloader/stage2/x86.o
+ .debug_aranges
+                0x00000120        0x0 source/bootloader/stage2/crtn.o
+ .debug_aranges
+                0x00000120       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x00000140       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_pubnames
+                0x00000000        0x0
+ .debug_pubnames
+                0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_pubnames
+                0x00000000        0x0 source/bootloader/stage2/entry.o
+ .debug_pubnames
+                0x00000000        0x0 source/bootloader/stage2/x86.o
+ .debug_pubnames
+                0x00000000        0x0 source/bootloader/stage2/crtn.o
+
+.debug_info     0x00000000     0x2333
+ .debug_info    0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_info    0x00000000       0xcb source/bootloader/stage2/ctype.o
+ .debug_info    0x000000cb      0x2d5 source/bootloader/stage2/disk.o
+ .debug_info    0x000003a0      0xa0d source/bootloader/stage2/fat.o
+ .debug_info    0x00000dad      0x335 source/bootloader/stage2/main.o
+ .debug_info    0x000010e2      0x289 source/bootloader/stage2/mbr.o
+ .debug_info    0x0000136b      0x237 source/bootloader/stage2/memory.o
+ .debug_info    0x000015a2      0x54c source/bootloader/stage2/stdio.o
+ .debug_info    0x00001aee      0x132 source/bootloader/stage2/string.o
+ .debug_info    0x00001c20        0x0 source/bootloader/stage2/entry.o
+ .debug_info    0x00001c20       0x88 source/bootloader/stage2/x86.o
+ .debug_info    0x00001ca8        0x0 source/bootloader/stage2/crtn.o
+ .debug_info    0x00001ca8      0x33a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_info    0x00001fe2      0x351 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_abbrev   0x00000000      0xd14
+ .debug_abbrev  0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_abbrev  0x00000000       0x77 source/bootloader/stage2/ctype.o
+ .debug_abbrev  0x00000077      0x161 source/bootloader/stage2/disk.o
+ .debug_abbrev  0x000001d8      0x264 source/bootloader/stage2/fat.o
+ .debug_abbrev  0x0000043c      0x14e source/bootloader/stage2/main.o
+ .debug_abbrev  0x0000058a      0x121 source/bootloader/stage2/mbr.o
+ .debug_abbrev  0x000006ab       0xe2 source/bootloader/stage2/memory.o
+ .debug_abbrev  0x0000078d      0x1f6 source/bootloader/stage2/stdio.o
+ .debug_abbrev  0x00000983       0xa8 source/bootloader/stage2/string.o
+ .debug_abbrev  0x00000a2b        0x0 source/bootloader/stage2/entry.o
+ .debug_abbrev  0x00000a2b       0x1d source/bootloader/stage2/x86.o
+ .debug_abbrev  0x00000a48        0x0 source/bootloader/stage2/crtn.o
+ .debug_abbrev  0x00000a48      0x15b /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00000ba3      0x171 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_line     0x00000000     0x11f3
+ .debug_line    0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_line    0x00000000       0x85 source/bootloader/stage2/ctype.o
+ .debug_line    0x00000085      0x109 source/bootloader/stage2/disk.o
+ .debug_line    0x0000018e      0x51e source/bootloader/stage2/fat.o
+ .debug_line    0x000006ac       0xca source/bootloader/stage2/main.o
+ .debug_line    0x00000776       0xab source/bootloader/stage2/mbr.o
+ .debug_line    0x00000821       0xe6 source/bootloader/stage2/memory.o
+ .debug_line    0x00000907      0x3a2 source/bootloader/stage2/stdio.o
+ .debug_line    0x00000ca9       0x9b source/bootloader/stage2/string.o
+ .debug_line    0x00000d44        0x0 source/bootloader/stage2/entry.o
+ .debug_line    0x00000d44      0x157 source/bootloader/stage2/x86.o
+ .debug_line    0x00000e9b        0x0 source/bootloader/stage2/crtn.o
+ .debug_line    0x00000e9b      0x180 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_line    0x0000101b      0x1d8 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_frame    0x00000000      0x5b8
+ .debug_frame   0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_frame   0x00000000       0x54 source/bootloader/stage2/ctype.o
+ .debug_frame   0x00000054       0x80 source/bootloader/stage2/disk.o
+ .debug_frame   0x000000d4      0x1a4 source/bootloader/stage2/fat.o
+ .debug_frame   0x00000278       0x2c source/bootloader/stage2/main.o
+ .debug_frame   0x000002a4       0x54 source/bootloader/stage2/mbr.o
+ .debug_frame   0x000002f8       0x94 source/bootloader/stage2/memory.o
+ .debug_frame   0x0000038c      0x1b8 source/bootloader/stage2/stdio.o
+ .debug_frame   0x00000544       0x74 source/bootloader/stage2/string.o
+ .debug_frame   0x000005b8        0x0 source/bootloader/stage2/entry.o
+ .debug_frame   0x000005b8        0x0 source/bootloader/stage2/x86.o
+ .debug_frame   0x000005b8        0x0 source/bootloader/stage2/crtn.o
+
+.debug_loc      0x00000000        0x0
+ .debug_loc     0x00000000        0x0 source/bootloader/stage2/crti.o
+ .debug_loc     0x00000000        0x0 source/bootloader/stage2/entry.o
+ .debug_loc     0x00000000        0x0 source/bootloader/stage2/x86.o
+ .debug_loc     0x00000000        0x0 source/bootloader/stage2/crtn.o
+
+.comment        0x00000000       0xe4
+ .comment       0x00000000       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .comment       0x00000013       0x13 source/bootloader/stage2/ctype.o
+ .comment       0x00000026       0x13 source/bootloader/stage2/disk.o
+ .comment       0x00000039       0x13 source/bootloader/stage2/fat.o
+ .comment       0x0000004c       0x13 source/bootloader/stage2/main.o
+ .comment       0x0000005f       0x13 source/bootloader/stage2/mbr.o
+ .comment       0x00000072       0x13 source/bootloader/stage2/memory.o
+ .comment       0x00000085       0x13 source/bootloader/stage2/stdio.o
+ .comment       0x00000098       0x13 source/bootloader/stage2/string.o
+ .comment       0x000000ab       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .comment       0x000000be       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .comment       0x000000d1       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_str      0x00000000     0x15ac
+ .debug_str     0x00000000       0xee source/bootloader/stage2/ctype.o
+ .debug_str     0x000000ee      0x1d5 source/bootloader/stage2/disk.o
+ .debug_str     0x000002c3      0x62e source/bootloader/stage2/fat.o
+ .debug_str     0x000008f1      0x231 source/bootloader/stage2/main.o
+ .debug_str     0x00000b22      0x1ef source/bootloader/stage2/mbr.o
+ .debug_str     0x00000d11      0x15a source/bootloader/stage2/memory.o
+ .debug_str     0x00000e6b      0x252 source/bootloader/stage2/stdio.o
+ .debug_str     0x000010bd       0xf5 source/bootloader/stage2/string.o
+ .debug_str     0x000011b2      0x1fd /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_str     0x000013af      0x1fd /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_line_str
+                0x00000000      0x831
+ .debug_line_str
+                0x00000000       0x82 source/bootloader/stage2/ctype.o
+ .debug_line_str
+                0x00000082       0xe5 source/bootloader/stage2/disk.o
+ .debug_line_str
+                0x00000167      0x102 source/bootloader/stage2/fat.o
+ .debug_line_str
+                0x00000269       0xf4 source/bootloader/stage2/main.o
+ .debug_line_str
+                0x0000035d       0xe3 source/bootloader/stage2/mbr.o
+ .debug_line_str
+                0x00000440       0xd6 source/bootloader/stage2/memory.o
+ .debug_line_str
+                0x00000516       0xe2 source/bootloader/stage2/stdio.o
+ .debug_line_str
+                0x000005f8       0x85 source/bootloader/stage2/string.o
+ .debug_line_str
+                0x0000067d       0xda /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_line_str
+                0x00000757       0xda /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_loclists
+                0x00000000      0x978
+ .debug_loclists
+                0x00000000      0x50c /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_loclists
+                0x0000050c      0x46c /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_rnglists
+                0x00000000       0x49
+ .debug_rnglists
+                0x00000000       0x2a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_rnglists
+                0x0000002a       0x1f /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)

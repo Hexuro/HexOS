@@ -9,7 +9,5 @@ __pycache__/
 # Build files
 *.o
 *.bin
-*.map
 *.img
-source/bootloader/stage1/stage1.map
 image/tmp_mount_**

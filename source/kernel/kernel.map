@@ -1,0 +1,772 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+                              source/kernel/stdio.o (__udivdi3)
+/home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                              source/kernel/stdio.o (__umoddi3)
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00100000                        phys = 0x100000
+                0x00100000                        . = phys
+
+.entry          0x00100000       0x88
+                0x00100000                        __entry_start = .
+ *(.entry)
+ .entry         0x00100000       0x88 source/kernel/main.o
+                0x00100000                start
+
+.text           0x00100090     0x3cae
+                0x00100090                        __text_start = .
+ *(.text)
+ .text          0x00100090      0x135 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .text          0x001001c5      0x667 source/kernel/keyboard.o
+                0x001001c5                PS2_PrintScancodeToAscii
+ .text          0x0010082c       0x2f source/kernel/main.o
+                0x0010082c                timer
+                0x00100832                keyboard_callback
+ .text          0x0010085b       0xf5 source/kernel/memory.o
+                0x0010085b                memcpy
+                0x001008ad                memset
+                0x001008f0                memcmp
+ .text          0x00100950      0x632 source/kernel/stdio.o
+                0x00100950                fputc
+                0x00100973                fputs
+                0x001009a5                fprintf_unsigned
+                0x00100a4c                fprintf_signed
+                0x00100aac                vfprintf
+                0x00100dc7                fprintf
+                0x00100deb                fprint_buffer
+                0x00100e90                putc
+                0x00100eb1                puts
+                0x00100eca                printf
+                0x00100eed                print_buffer
+                0x00100f09                debugc
+                0x00100f2a                debugs
+                0x00100f43                debugf
+                0x00100f66                debug_buffer
+ .text          0x00100f82       0x22 source/kernel/hal/hal.o
+                0x00100f82                HAL_Initialize
+ .text          0x00100fa4       0xa5 source/kernel/hal/vfs.o
+                0x00100fa4                VFS_Write
+ .text          0x00101049       0x27 source/kernel/arch/i686/e9.o
+                0x00101049                e9_putc
+ .text          0x00101070       0x1d source/kernel/arch/i686/gdt.o
+                0x00101070                i686_GDT_Initialize
+ .text          0x0010108d      0x320 source/kernel/arch/i686/i8259.o
+                0x0010108d                i8259_SetMask
+                0x001010e8                i8259_GetMask
+                0x0010111c                i8259_Configure
+                0x0010121d                i8259_SendEndOfInterrupt
+                0x0010124d                i8259_Disable
+                0x00101266                i8259_Mask
+                0x00101297                i8259_Unmask
+                0x001012ca                i8259_ReadIrqRequestRegister
+                0x00101322                i8259_ReadInServiceRegister
+                0x0010137a                i8259_Probe
+                0x001013a3                i8259_GetDriver
+ .text          0x001013ad       0xba source/kernel/arch/i686/idt.o
+                0x001013ad                i686_IDT_SetGate
+                0x0010140e                i686_IDT_EnableGate
+                0x0010142e                i686_IDT_DisableGate
+                0x0010144e                i686_IDT_Initialize
+ .text          0x00101467       0x1b source/kernel/arch/i686/io.o
+                0x00101467                i686_iowait
+ .text          0x00101482      0x151 source/kernel/arch/i686/irq.o
+                0x00101482                i686_IRQ_Handler
+                0x001014e2                i686_IRQ_Initialize
+                0x001015c0                i686_IRQ_RegisterHandler
+ .text          0x001015d3      0x1a1 source/kernel/arch/i686/isr.o
+                0x001015d3                i686_ISR_Initialize
+                0x00101615                i686_ISR_Handler
+                0x00101750                i686_ISR_RegisterHandler
+ .text          0x00101774     0x1489 source/kernel/arch/i686/isrs_gen.o
+                0x00101774                i686_ISR_InitializeGates
+ .text          0x00102bfd      0x3a5 source/kernel/arch/i686/vga_text.o
+                0x00102bfd                VGA_putchr
+                0x00102c2c                VGA_putcolor
+                0x00102c5e                VGA_getchr
+                0x00102c80                VGA_getcolor
+                0x00102ca5                VGA_setcursor
+                0x00102d16                VGA_clrscr
+                0x00102da4                VGA_scrollback
+                0x00102e92                VGA_putc
+ *fill*         0x00102fa2        0xe 
+ .text          0x00102fb0       0x25 source/kernel/arch/i686/gdt_asm.o
+                0x00102fb0                i686_GDT_Load
+ *fill*         0x00102fd5        0xb 
+ .text          0x00102fe0       0x14 source/kernel/arch/i686/i686.o
+ *fill*         0x00102ff4        0xc 
+ .text          0x00103000        0xd source/kernel/arch/i686/idt_asm.o
+                0x00103000                i686_IDT_Load
+ *fill*         0x0010300d        0x3 
+ .text          0x00103010       0x1d source/kernel/arch/i686/io_asm.o
+                0x00103010                i686_outb
+                0x0010301b                i686_inb
+                0x00103024                i686_Panic
+                0x00103026                i686_EnableInterrupts
+                0x00103028                i686_DisableInterrupts
+                0x0010302a                crash_me
+ *fill*         0x0010302d        0x3 
+ .text          0x00103030      0xa69 source/kernel/arch/i686/isr_asm.o
+                0x00103030                i686_ISR0
+                0x00103039                i686_ISR1
+                0x00103042                i686_ISR2
+                0x0010304b                i686_ISR3
+                0x00103054                i686_ISR4
+                0x0010305d                i686_ISR5
+                0x00103066                i686_ISR6
+                0x0010306f                i686_ISR7
+                0x00103078                i686_ISR8
+                0x0010307f                i686_ISR9
+                0x00103088                i686_ISR10
+                0x0010308f                i686_ISR11
+                0x00103096                i686_ISR12
+                0x0010309d                i686_ISR13
+                0x001030a4                i686_ISR14
+                0x001030ab                i686_ISR15
+                0x001030b4                i686_ISR16
+                0x001030bd                i686_ISR17
+                0x001030c4                i686_ISR18
+                0x001030cd                i686_ISR19
+                0x001030d6                i686_ISR20
+                0x001030df                i686_ISR21
+                0x001030e6                i686_ISR22
+                0x001030ef                i686_ISR23
+                0x001030f8                i686_ISR24
+                0x00103101                i686_ISR25
+                0x0010310a                i686_ISR26
+                0x00103113                i686_ISR27
+                0x0010311c                i686_ISR28
+                0x00103125                i686_ISR29
+                0x0010312c                i686_ISR30
+                0x00103133                i686_ISR31
+                0x0010313c                i686_ISR32
+                0x00103145                i686_ISR33
+                0x0010314e                i686_ISR34
+                0x00103157                i686_ISR35
+                0x00103160                i686_ISR36
+                0x00103169                i686_ISR37
+                0x00103172                i686_ISR38
+                0x0010317b                i686_ISR39
+                0x00103184                i686_ISR40
+                0x0010318d                i686_ISR41
+                0x00103196                i686_ISR42
+                0x0010319f                i686_ISR43
+                0x001031a8                i686_ISR44
+                0x001031b1                i686_ISR45
+                0x001031ba                i686_ISR46
+                0x001031c3                i686_ISR47
+                0x001031cc                i686_ISR48
+                0x001031d5                i686_ISR49
+                0x001031de                i686_ISR50
+                0x001031e7                i686_ISR51
+                0x001031f0                i686_ISR52
+                0x001031f9                i686_ISR53
+                0x00103202                i686_ISR54
+                0x0010320b                i686_ISR55
+                0x00103214                i686_ISR56
+                0x0010321d                i686_ISR57
+                0x00103226                i686_ISR58
+                0x0010322f                i686_ISR59
+                0x00103238                i686_ISR60
+                0x00103241                i686_ISR61
+                0x0010324a                i686_ISR62
+                0x00103253                i686_ISR63
+                0x0010325c                i686_ISR64
+                0x00103265                i686_ISR65
+                0x0010326e                i686_ISR66
+                0x00103277                i686_ISR67
+                0x00103280                i686_ISR68
+                0x00103289                i686_ISR69
+                0x00103292                i686_ISR70
+                0x0010329b                i686_ISR71
+                0x001032a4                i686_ISR72
+                0x001032ad                i686_ISR73
+                0x001032b6                i686_ISR74
+                0x001032bf                i686_ISR75
+                0x001032c8                i686_ISR76
+                0x001032d1                i686_ISR77
+                0x001032da                i686_ISR78
+                0x001032e3                i686_ISR79
+                0x001032ec                i686_ISR80
+                0x001032f5                i686_ISR81
+                0x001032fe                i686_ISR82
+                0x00103307                i686_ISR83
+                0x00103310                i686_ISR84
+                0x00103319                i686_ISR85
+                0x00103322                i686_ISR86
+                0x0010332b                i686_ISR87
+                0x00103334                i686_ISR88
+                0x0010333d                i686_ISR89
+                0x00103346                i686_ISR90
+                0x0010334f                i686_ISR91
+                0x00103358                i686_ISR92
+                0x00103361                i686_ISR93
+                0x0010336a                i686_ISR94
+                0x00103373                i686_ISR95
+                0x0010337c                i686_ISR96
+                0x00103385                i686_ISR97
+                0x0010338e                i686_ISR98
+                0x00103397                i686_ISR99
+                0x001033a0                i686_ISR100
+                0x001033a9                i686_ISR101
+                0x001033b2                i686_ISR102
+                0x001033bb                i686_ISR103
+                0x001033c4                i686_ISR104
+                0x001033cd                i686_ISR105
+                0x001033d6                i686_ISR106
+                0x001033df                i686_ISR107
+                0x001033e8                i686_ISR108
+                0x001033f1                i686_ISR109
+                0x001033fa                i686_ISR110
+                0x00103403                i686_ISR111
+                0x0010340c                i686_ISR112
+                0x00103415                i686_ISR113
+                0x0010341e                i686_ISR114
+                0x00103427                i686_ISR115
+                0x00103430                i686_ISR116
+                0x00103439                i686_ISR117
+                0x00103442                i686_ISR118
+                0x0010344b                i686_ISR119
+                0x00103454                i686_ISR120
+                0x0010345d                i686_ISR121
+                0x00103466                i686_ISR122
+                0x0010346f                i686_ISR123
+                0x00103478                i686_ISR124
+                0x00103481                i686_ISR125
+                0x0010348a                i686_ISR126
+                0x00103493                i686_ISR127
+                0x0010349c                i686_ISR128
+                0x001034a8                i686_ISR129
+                0x001034b4                i686_ISR130
+                0x001034c0                i686_ISR131
+                0x001034cc                i686_ISR132
+                0x001034d8                i686_ISR133
+                0x001034e4                i686_ISR134
+                0x001034f0                i686_ISR135
+                0x001034fc                i686_ISR136
+                0x00103508                i686_ISR137
+                0x00103514                i686_ISR138
+                0x00103520                i686_ISR139
+                0x0010352c                i686_ISR140
+                0x00103538                i686_ISR141
+                0x00103544                i686_ISR142
+                0x00103550                i686_ISR143
+                0x0010355c                i686_ISR144
+                0x00103568                i686_ISR145
+                0x00103574                i686_ISR146
+                0x00103580                i686_ISR147
+                0x0010358c                i686_ISR148
+                0x00103598                i686_ISR149
+                0x001035a4                i686_ISR150
+                0x001035b0                i686_ISR151
+                0x001035bc                i686_ISR152
+                0x001035c8                i686_ISR153
+                0x001035d4                i686_ISR154
+                0x001035e0                i686_ISR155
+                0x001035ec                i686_ISR156
+                0x001035f8                i686_ISR157
+                0x00103604                i686_ISR158
+                0x00103610                i686_ISR159
+                0x0010361c                i686_ISR160
+                0x00103628                i686_ISR161
+                0x00103634                i686_ISR162
+                0x00103640                i686_ISR163
+                0x0010364c                i686_ISR164
+                0x00103658                i686_ISR165
+                0x00103664                i686_ISR166
+                0x00103670                i686_ISR167
+                0x0010367c                i686_ISR168
+                0x00103688                i686_ISR169
+                0x00103694                i686_ISR170
+                0x001036a0                i686_ISR171
+                0x001036ac                i686_ISR172
+                0x001036b8                i686_ISR173
+                0x001036c4                i686_ISR174
+                0x001036d0                i686_ISR175
+                0x001036dc                i686_ISR176
+                0x001036e8                i686_ISR177
+                0x001036f4                i686_ISR178
+                0x00103700                i686_ISR179
+                0x0010370c                i686_ISR180
+                0x00103718                i686_ISR181
+                0x00103724                i686_ISR182
+                0x00103730                i686_ISR183
+                0x0010373c                i686_ISR184
+                0x00103748                i686_ISR185
+                0x00103754                i686_ISR186
+                0x00103760                i686_ISR187
+                0x0010376c                i686_ISR188
+                0x00103778                i686_ISR189
+                0x00103784                i686_ISR190
+                0x00103790                i686_ISR191
+                0x0010379c                i686_ISR192
+                0x001037a8                i686_ISR193
+                0x001037b4                i686_ISR194
+                0x001037c0                i686_ISR195
+                0x001037cc                i686_ISR196
+                0x001037d8                i686_ISR197
+                0x001037e4                i686_ISR198
+                0x001037f0                i686_ISR199
+                0x001037fc                i686_ISR200
+                0x00103808                i686_ISR201
+                0x00103814                i686_ISR202
+                0x00103820                i686_ISR203
+                0x0010382c                i686_ISR204
+                0x00103838                i686_ISR205
+                0x00103844                i686_ISR206
+                0x00103850                i686_ISR207
+                0x0010385c                i686_ISR208
+                0x00103868                i686_ISR209
+                0x00103874                i686_ISR210
+                0x00103880                i686_ISR211
+                0x0010388c                i686_ISR212
+                0x00103898                i686_ISR213
+                0x001038a4                i686_ISR214
+                0x001038b0                i686_ISR215
+                0x001038bc                i686_ISR216
+                0x001038c8                i686_ISR217
+                0x001038d4                i686_ISR218
+                0x001038e0                i686_ISR219
+                0x001038ec                i686_ISR220
+                0x001038f8                i686_ISR221
+                0x00103904                i686_ISR222
+                0x00103910                i686_ISR223
+                0x0010391c                i686_ISR224
+                0x00103928                i686_ISR225
+                0x00103934                i686_ISR226
+                0x00103940                i686_ISR227
+                0x0010394c                i686_ISR228
+                0x00103958                i686_ISR229
+                0x00103964                i686_ISR230
+                0x00103970                i686_ISR231
+                0x0010397c                i686_ISR232
+                0x00103988                i686_ISR233
+                0x00103994                i686_ISR234
+                0x001039a0                i686_ISR235
+                0x001039ac                i686_ISR236
+                0x001039b8                i686_ISR237
+                0x001039c4                i686_ISR238
+                0x001039d0                i686_ISR239
+                0x001039dc                i686_ISR240
+                0x001039e8                i686_ISR241
+                0x001039f1                i686_ISR242
+                0x001039fa                i686_ISR243
+                0x00103a03                i686_ISR244
+                0x00103a0c                i686_ISR245
+                0x00103a15                i686_ISR246
+                0x00103a1e                i686_ISR247
+                0x00103a27                i686_ISR248
+                0x00103a30                i686_ISR249
+                0x00103a39                i686_ISR250
+                0x00103a42                i686_ISR251
+                0x00103a4b                i686_ISR252
+                0x00103a54                i686_ISR253
+                0x00103a5d                i686_ISR254
+                0x00103a66                i686_ISR255
+ *fill*         0x00103a99        0x7 
+ .text          0x00103aa0       0x39 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ *fill*         0x00103ad9        0x7 
+ .text          0x00103ae0      0x11a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+                0x00103ae0                __udivdi3
+ *fill*         0x00103bfa        0x6 
+ .text          0x00103c00      0x13e /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                0x00103c00                __umoddi3
+
+.fini           0x00103d3e        0x5
+ .fini          0x00103d3e        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+
+.init           0x00103d43        0xa
+ .init          0x00103d43        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .init          0x00103d48        0x5 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+
+.data           0x00103d50       0x30
+                0x00103d50                        __data_start = .
+ *(.data)
+ .data          0x00103d50        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+                0x00103d50                __dso_handle
+ .data          0x00103d54        0x0 source/kernel/keyboard.o
+ .data          0x00103d54        0x0 source/kernel/main.o
+ .data          0x00103d54        0x0 source/kernel/memory.o
+ .data          0x00103d54        0x0 source/kernel/stdio.o
+ .data          0x00103d54        0x0 source/kernel/hal/hal.o
+ .data          0x00103d54        0x0 source/kernel/hal/vfs.o
+ .data          0x00103d54        0x0 source/kernel/arch/i686/e9.o
+ .data          0x00103d54       0x1e source/kernel/arch/i686/gdt.o
+                0x00103d54                g_GDT
+                0x00103d6c                g_GDTDescriptor
+ .data          0x00103d72        0x2 source/kernel/arch/i686/i8259.o
+ .data          0x00103d74        0x6 source/kernel/arch/i686/idt.o
+                0x00103d74                g_IDTDescriptor
+ .data          0x00103d7a        0x0 source/kernel/arch/i686/io.o
+ .data          0x00103d7a        0x0 source/kernel/arch/i686/irq.o
+ .data          0x00103d7a        0x0 source/kernel/arch/i686/isr.o
+ .data          0x00103d7a        0x0 source/kernel/arch/i686/isrs_gen.o
+ *fill*         0x00103d7a        0x2 
+ .data          0x00103d7c        0x4 source/kernel/arch/i686/vga_text.o
+                0x00103d7c                g_ScreenBuffer
+ .data          0x00103d80        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .data          0x00103d80        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .data          0x00103d80        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.ctors          0x00103d80        0x8
+ .ctors         0x00103d80        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .ctors         0x00103d84        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+
+.dtors          0x00103d88        0x8
+ .dtors         0x00103d88        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .dtors         0x00103d8c        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+                0x00103d8c                __DTOR_END__
+
+.tm_clone_table
+                0x00103d90        0x0
+ .tm_clone_table
+                0x00103d90        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .tm_clone_table
+                0x00103d90        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+
+.rodata         0x00103da0      0x879
+                0x00103da0                        __rodata_start = .
+ *(.rodata)
+ .rodata        0x00103da0      0x3b0 source/kernel/keyboard.o
+ .rodata        0x00104150       0x56 source/kernel/main.o
+ *fill*         0x001041a6        0x2 
+ .rodata        0x001041a8       0xae source/kernel/stdio.o
+                0x001041a8                g_HexChars
+ *fill*         0x00104256        0x2 
+ .rodata        0x00104258       0x28 source/kernel/arch/i686/i8259.o
+ .rodata        0x00104280       0x3c source/kernel/arch/i686/irq.o
+ *fill*         0x001042bc        0x4 
+ .rodata        0x001042c0      0x34f source/kernel/arch/i686/isr.o
+ *fill*         0x0010460f        0x1 
+ .rodata        0x00104610        0x9 source/kernel/arch/i686/vga_text.o
+                0x00104610                SCREEN_WIDTH
+                0x00104614                SCREEN_HEIGHT
+                0x00104618                DEFAULT_COLOR
+
+.eh_frame       0x0010461c       0xdc
+ .eh_frame      0x0010461c        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .eh_frame      0x0010461c        0x4 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .eh_frame      0x00104620       0x64 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .eh_frame      0x00104684       0x74 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.bss            0x00104700      0xca8
+                0x00104700                        __bss_start = .
+ *(.bss)
+ .bss           0x00104700       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .bss           0x00104720        0x2 source/kernel/keyboard.o
+                0x00104720                g_PS2KeyboardProps
+ .bss           0x00104722        0x0 source/kernel/main.o
+ .bss           0x00104722        0x0 source/kernel/memory.o
+ .bss           0x00104722        0x0 source/kernel/stdio.o
+ .bss           0x00104722        0x0 source/kernel/hal/hal.o
+ .bss           0x00104722        0x0 source/kernel/hal/vfs.o
+ .bss           0x00104722        0x0 source/kernel/arch/i686/e9.o
+ .bss           0x00104722        0x0 source/kernel/arch/i686/gdt.o
+ *fill*         0x00104722        0x2 
+ .bss           0x00104724        0xd source/kernel/arch/i686/i8259.o
+                0x00104724                PIC_ICW1
+                0x00104728                PIC_ICW4
+                0x0010472c                PIC_CMD
+ *fill*         0x00104731        0xf 
+ .bss           0x00104740      0x800 source/kernel/arch/i686/idt.o
+                0x00104740                g_IDT
+ .bss           0x00104f40        0x0 source/kernel/arch/i686/io.o
+ .bss           0x00104f40       0x44 source/kernel/arch/i686/irq.o
+                0x00104f40                g_IRQHandlers
+ *fill*         0x00104f84       0x1c 
+ .bss           0x00104fa0      0x400 source/kernel/arch/i686/isr.o
+                0x00104fa0                g_ISRHandlers
+ .bss           0x001053a0        0x0 source/kernel/arch/i686/isrs_gen.o
+ .bss           0x001053a0        0x8 source/kernel/arch/i686/vga_text.o
+                0x001053a0                g_ScreenX
+                0x001053a4                g_ScreenY
+ .bss           0x001053a8        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .bss           0x001053a8        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .bss           0x001053a8        0x0 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+                0x001053a8                        __end = .
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+LOAD source/kernel/keyboard.o
+LOAD source/kernel/main.o
+LOAD source/kernel/memory.o
+LOAD source/kernel/stdio.o
+LOAD source/kernel/hal/hal.o
+LOAD source/kernel/hal/vfs.o
+LOAD source/kernel/arch/i686/e9.o
+LOAD source/kernel/arch/i686/gdt.o
+LOAD source/kernel/arch/i686/i8259.o
+LOAD source/kernel/arch/i686/idt.o
+LOAD source/kernel/arch/i686/io.o
+LOAD source/kernel/arch/i686/irq.o
+LOAD source/kernel/arch/i686/isr.o
+LOAD source/kernel/arch/i686/isrs_gen.o
+LOAD source/kernel/arch/i686/vga_text.o
+LOAD source/kernel/arch/i686/gdt_asm.o
+LOAD source/kernel/arch/i686/i686.o
+LOAD source/kernel/arch/i686/idt_asm.o
+LOAD source/kernel/arch/i686/io_asm.o
+LOAD source/kernel/arch/i686/isr_asm.o
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+LOAD /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a
+OUTPUT(source/kernel/kernel.bin binary)
+
+.comment        0x00000000      0x169
+ .comment       0x00000000       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtbegin.o
+ .comment       0x00000013       0x13 source/kernel/keyboard.o
+ .comment       0x00000026       0x13 source/kernel/main.o
+ .comment       0x00000039       0x13 source/kernel/memory.o
+ .comment       0x0000004c       0x13 source/kernel/stdio.o
+ .comment       0x0000005f       0x13 source/kernel/hal/hal.o
+ .comment       0x00000072       0x13 source/kernel/hal/vfs.o
+ .comment       0x00000085       0x13 source/kernel/arch/i686/e9.o
+ .comment       0x00000098       0x13 source/kernel/arch/i686/gdt.o
+ .comment       0x000000ab       0x13 source/kernel/arch/i686/i8259.o
+ .comment       0x000000be       0x13 source/kernel/arch/i686/idt.o
+ .comment       0x000000d1       0x13 source/kernel/arch/i686/io.o
+ .comment       0x000000e4       0x13 source/kernel/arch/i686/irq.o
+ .comment       0x000000f7       0x13 source/kernel/arch/i686/isr.o
+ .comment       0x0000010a       0x13 source/kernel/arch/i686/isrs_gen.o
+ .comment       0x0000011d       0x13 source/kernel/arch/i686/vga_text.o
+ .comment       0x00000130       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/crtend.o
+ .comment       0x00000143       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .comment       0x00000156       0x13 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_info     0x00000000     0x35e1
+ .debug_info    0x00000000      0x114 source/kernel/keyboard.o
+ .debug_info    0x00000114      0x2c6 source/kernel/main.o
+ .debug_info    0x000003da      0x1e8 source/kernel/memory.o
+ .debug_info    0x000005c2      0x511 source/kernel/stdio.o
+ .debug_info    0x00000ad3       0xc0 source/kernel/hal/hal.o
+ .debug_info    0x00000b93      0x130 source/kernel/hal/vfs.o
+ .debug_info    0x00000cc3       0xc5 source/kernel/arch/i686/e9.o
+ .debug_info    0x00000d88      0x1fa source/kernel/arch/i686/gdt.o
+ .debug_info    0x00000f82      0x3bd source/kernel/arch/i686/i8259.o
+ .debug_info    0x0000133f      0x24e source/kernel/arch/i686/idt.o
+ .debug_info    0x0000158d       0xac source/kernel/arch/i686/io.o
+ .debug_info    0x00001639      0x3a7 source/kernel/arch/i686/irq.o
+ .debug_info    0x000019e0      0x29c source/kernel/arch/i686/isr.o
+ .debug_info    0x00001c7c      0xd09 source/kernel/arch/i686/isrs_gen.o
+ .debug_info    0x00002985      0x323 source/kernel/arch/i686/vga_text.o
+ .debug_info    0x00002ca8       0x8a source/kernel/arch/i686/gdt_asm.o
+ .debug_info    0x00002d32       0x87 source/kernel/arch/i686/i686.o
+ .debug_info    0x00002db9       0x8a source/kernel/arch/i686/idt_asm.o
+ .debug_info    0x00002e43       0x89 source/kernel/arch/i686/io_asm.o
+ .debug_info    0x00002ecc       0x8a source/kernel/arch/i686/isr_asm.o
+ .debug_info    0x00002f56      0x33a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_info    0x00003290      0x351 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_abbrev   0x00000000     0x12b7
+ .debug_abbrev  0x00000000       0xda source/kernel/keyboard.o
+ .debug_abbrev  0x000000da      0x155 source/kernel/main.o
+ .debug_abbrev  0x0000022f       0xe2 source/kernel/memory.o
+ .debug_abbrev  0x00000311      0x189 source/kernel/stdio.o
+ .debug_abbrev  0x0000049a       0x5a source/kernel/hal/hal.o
+ .debug_abbrev  0x000004f4       0xb6 source/kernel/hal/vfs.o
+ .debug_abbrev  0x000005aa       0x82 source/kernel/arch/i686/e9.o
+ .debug_abbrev  0x0000062c       0xf0 source/kernel/arch/i686/gdt.o
+ .debug_abbrev  0x0000071c      0x1ba source/kernel/arch/i686/i8259.o
+ .debug_abbrev  0x000008d6      0x122 source/kernel/arch/i686/idt.o
+ .debug_abbrev  0x000009f8       0x6d source/kernel/arch/i686/io.o
+ .debug_abbrev  0x00000a65      0x19a source/kernel/arch/i686/irq.o
+ .debug_abbrev  0x00000bff      0x150 source/kernel/arch/i686/isr.o
+ .debug_abbrev  0x00000d4f       0xbf source/kernel/arch/i686/isrs_gen.o
+ .debug_abbrev  0x00000e0e      0x14c source/kernel/arch/i686/vga_text.o
+ .debug_abbrev  0x00000f5a       0x1d source/kernel/arch/i686/gdt_asm.o
+ .debug_abbrev  0x00000f77       0x1d source/kernel/arch/i686/i686.o
+ .debug_abbrev  0x00000f94       0x1d source/kernel/arch/i686/idt_asm.o
+ .debug_abbrev  0x00000fb1       0x1d source/kernel/arch/i686/io_asm.o
+ .debug_abbrev  0x00000fce       0x1d source/kernel/arch/i686/isr_asm.o
+ .debug_abbrev  0x00000feb      0x15b /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x00001146      0x171 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_aranges  0x00000000      0x2c8
+ .debug_aranges
+                0x00000000       0x20 source/kernel/keyboard.o
+ .debug_aranges
+                0x00000020       0x28 source/kernel/main.o
+ .debug_aranges
+                0x00000048       0x20 source/kernel/memory.o
+ .debug_aranges
+                0x00000068       0x20 source/kernel/stdio.o
+ .debug_aranges
+                0x00000088       0x20 source/kernel/hal/hal.o
+ .debug_aranges
+                0x000000a8       0x20 source/kernel/hal/vfs.o
+ .debug_aranges
+                0x000000c8       0x20 source/kernel/arch/i686/e9.o
+ .debug_aranges
+                0x000000e8       0x20 source/kernel/arch/i686/gdt.o
+ .debug_aranges
+                0x00000108       0x20 source/kernel/arch/i686/i8259.o
+ .debug_aranges
+                0x00000128       0x20 source/kernel/arch/i686/idt.o
+ .debug_aranges
+                0x00000148       0x20 source/kernel/arch/i686/io.o
+ .debug_aranges
+                0x00000168       0x20 source/kernel/arch/i686/irq.o
+ .debug_aranges
+                0x00000188       0x20 source/kernel/arch/i686/isr.o
+ .debug_aranges
+                0x000001a8       0x20 source/kernel/arch/i686/isrs_gen.o
+ .debug_aranges
+                0x000001c8       0x20 source/kernel/arch/i686/vga_text.o
+ .debug_aranges
+                0x000001e8       0x20 source/kernel/arch/i686/gdt_asm.o
+ .debug_aranges
+                0x00000208       0x20 source/kernel/arch/i686/i686.o
+ .debug_aranges
+                0x00000228       0x20 source/kernel/arch/i686/idt_asm.o
+ .debug_aranges
+                0x00000248       0x20 source/kernel/arch/i686/io_asm.o
+ .debug_aranges
+                0x00000268       0x20 source/kernel/arch/i686/isr_asm.o
+ .debug_aranges
+                0x00000288       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x000002a8       0x20 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_line     0x00000000     0x1909
+ .debug_line    0x00000000      0x2b2 source/kernel/keyboard.o
+ .debug_line    0x000002b2       0xad source/kernel/main.o
+ .debug_line    0x0000035f       0xd0 source/kernel/memory.o
+ .debug_line    0x0000042f      0x281 source/kernel/stdio.o
+ .debug_line    0x000006b0       0x70 source/kernel/hal/hal.o
+ .debug_line    0x00000720       0xb0 source/kernel/hal/vfs.o
+ .debug_line    0x000007d0       0x5e source/kernel/arch/i686/e9.o
+ .debug_line    0x0000082e       0x5c source/kernel/arch/i686/gdt.o
+ .debug_line    0x0000088a      0x13e source/kernel/arch/i686/i8259.o
+ .debug_line    0x000009c8       0x89 source/kernel/arch/i686/idt.o
+ .debug_line    0x00000a51       0x5e source/kernel/arch/i686/io.o
+ .debug_line    0x00000aaf      0x10f source/kernel/arch/i686/irq.o
+ .debug_line    0x00000bbe       0xd8 source/kernel/arch/i686/isr.o
+ .debug_line    0x00000c96      0x25f source/kernel/arch/i686/isrs_gen.o
+ .debug_line    0x00000ef5      0x1d8 source/kernel/arch/i686/vga_text.o
+ .debug_line    0x000010cd       0x61 source/kernel/arch/i686/gdt_asm.o
+ .debug_line    0x0000112e       0x55 source/kernel/arch/i686/i686.o
+ .debug_line    0x00001183       0x57 source/kernel/arch/i686/idt_asm.o
+ .debug_line    0x000011da       0x63 source/kernel/arch/i686/io_asm.o
+ .debug_line    0x0000123d      0x374 source/kernel/arch/i686/isr_asm.o
+ .debug_line    0x000015b1      0x180 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_line    0x00001731      0x1d8 /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_str      0x00000000     0x2ac7
+ .debug_str     0x00000000      0x15a source/kernel/keyboard.o
+ .debug_str     0x0000015a      0x1d3 source/kernel/main.o
+ .debug_str     0x0000032d      0x129 source/kernel/memory.o
+ .debug_str     0x00000456      0x21f source/kernel/stdio.o
+ .debug_str     0x00000675      0x13d source/kernel/hal/hal.o
+ .debug_str     0x000007b2      0x116 source/kernel/hal/vfs.o
+ .debug_str     0x000008c8       0xfb source/kernel/arch/i686/e9.o
+ .debug_str     0x000009c3      0x2fe source/kernel/arch/i686/gdt.o
+ .debug_str     0x00000cc1      0x377 source/kernel/arch/i686/i8259.o
+ .debug_str     0x00001038      0x295 source/kernel/arch/i686/idt.o
+ .debug_str     0x000012cd       0xfa source/kernel/arch/i686/io.o
+ .debug_str     0x000013c7      0x229 source/kernel/arch/i686/irq.o
+ .debug_str     0x000015f0      0x1cf source/kernel/arch/i686/isr.o
+ .debug_str     0x000017bf      0xd62 source/kernel/arch/i686/isrs_gen.o
+ .debug_str     0x00002521      0x1ac source/kernel/arch/i686/vga_text.o
+ .debug_str     0x000026cd      0x1fd /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_str     0x000028ca      0x1fd /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_line_str
+                0x00000000      0xeaf
+ .debug_line_str
+                0x00000000       0xd9 source/kernel/keyboard.o
+ .debug_line_str
+                0x000000d9      0x119 source/kernel/main.o
+ .debug_line_str
+                0x000001f2       0xc0 source/kernel/memory.o
+ .debug_line_str
+                0x000002b2       0xe7 source/kernel/stdio.o
+ .debug_line_str
+                0x00000399       0xa9 source/kernel/hal/hal.o
+ .debug_line_str
+                0x00000442       0xf6 source/kernel/hal/vfs.o
+ .debug_line_str
+                0x00000538       0xcd source/kernel/arch/i686/e9.o
+ .debug_line_str
+                0x00000605       0xcb source/kernel/arch/i686/gdt.o
+ .debug_line_str
+                0x000006d0       0xdc source/kernel/arch/i686/i8259.o
+ .debug_line_str
+                0x000007ac       0xd1 source/kernel/arch/i686/idt.o
+ .debug_line_str
+                0x0000087d       0xcd source/kernel/arch/i686/io.o
+ .debug_line_str
+                0x0000094a      0x100 source/kernel/arch/i686/irq.o
+ .debug_line_str
+                0x00000a4a       0xf2 source/kernel/arch/i686/isr.o
+ .debug_line_str
+                0x00000b3c       0xe0 source/kernel/arch/i686/isrs_gen.o
+ .debug_line_str
+                0x00000c1c       0xdf source/kernel/arch/i686/vga_text.o
+ .debug_line_str
+                0x00000cfb       0xda /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_line_str
+                0x00000dd5       0xda /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_frame    0x00000000      0x860
+ .debug_frame   0x00000000       0x34 source/kernel/keyboard.o
+ .debug_frame   0x00000034       0x6c source/kernel/main.o
+ .debug_frame   0x000000a0       0x74 source/kernel/memory.o
+ .debug_frame   0x00000114      0x1f8 source/kernel/stdio.o
+ .debug_frame   0x0000030c       0x34 source/kernel/hal/hal.o
+ .debug_frame   0x00000340       0x34 source/kernel/hal/vfs.o
+ .debug_frame   0x00000374       0x34 source/kernel/arch/i686/e9.o
+ .debug_frame   0x000003a8       0x34 source/kernel/arch/i686/gdt.o
+ .debug_frame   0x000003dc      0x180 source/kernel/arch/i686/i8259.o
+ .debug_frame   0x0000055c       0x94 source/kernel/arch/i686/idt.o
+ .debug_frame   0x000005f0       0x34 source/kernel/arch/i686/io.o
+ .debug_frame   0x00000624       0x74 source/kernel/arch/i686/irq.o
+ .debug_frame   0x00000698       0x80 source/kernel/arch/i686/isr.o
+ .debug_frame   0x00000718       0x34 source/kernel/arch/i686/isrs_gen.o
+ .debug_frame   0x0000074c      0x114 source/kernel/arch/i686/vga_text.o
+ .debug_frame   0x00000860        0x0 source/kernel/arch/i686/gdt_asm.o
+ .debug_frame   0x00000860        0x0 source/kernel/arch/i686/i686.o
+ .debug_frame   0x00000860        0x0 source/kernel/arch/i686/idt_asm.o
+ .debug_frame   0x00000860        0x0 source/kernel/arch/i686/io_asm.o
+ .debug_frame   0x00000860        0x0 source/kernel/arch/i686/isr_asm.o
+
+.debug_rnglists
+                0x00000000       0x63
+ .debug_rnglists
+                0x00000000       0x1a source/kernel/main.o
+ .debug_rnglists
+                0x0000001a       0x2a /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_rnglists
+                0x00000044       0x1f /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
+
+.debug_pubnames
+                0x00000000        0x0
+ .debug_pubnames
+                0x00000000        0x0 source/kernel/arch/i686/gdt_asm.o
+ .debug_pubnames
+                0x00000000        0x0 source/kernel/arch/i686/i686.o
+ .debug_pubnames
+                0x00000000        0x0 source/kernel/arch/i686/idt_asm.o
+ .debug_pubnames
+                0x00000000        0x0 source/kernel/arch/i686/io_asm.o
+ .debug_pubnames
+                0x00000000        0x0 source/kernel/arch/i686/isr_asm.o
+
+.debug_loc      0x00000000        0x0
+ .debug_loc     0x00000000        0x0 source/kernel/arch/i686/gdt_asm.o
+ .debug_loc     0x00000000        0x0 source/kernel/arch/i686/i686.o
+ .debug_loc     0x00000000        0x0 source/kernel/arch/i686/idt_asm.o
+ .debug_loc     0x00000000        0x0 source/kernel/arch/i686/io_asm.o
+ .debug_loc     0x00000000        0x0 source/kernel/arch/i686/isr_asm.o
+
+.debug_loclists
+                0x00000000      0x978
+ .debug_loclists
+                0x00000000      0x50c /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_udivdi3.o)
+ .debug_loclists
+                0x0000050c      0x46c /home/viktorpopp/toolchain/i686-elf/lib/gcc/i686-elf/14.1.0/libgcc.a(_umoddi3.o)
